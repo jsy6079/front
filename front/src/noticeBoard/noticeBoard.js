@@ -38,7 +38,7 @@ const NoticeBoard = () => {
 
         const amount = 8;
     
-        axios.get('http://localhost:8080/api/notice/noticeBoardList', {
+        axios.get('/api/notice/noticeBoardList', {
           params : {
             amount : amount,
             pageNum : pageNum

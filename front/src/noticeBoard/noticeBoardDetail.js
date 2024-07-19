@@ -21,7 +21,7 @@ const BoardDetail = () => {
     useEffect(() => {
          
         if (freeBoardNo) {
-            axios.get('http://localhost:8080/api/free/detail/' + freeBoardNo, { withCredentials: true })
+            axios.get('/api/free/detail/' + freeBoardNo, { withCredentials: true })
                 .then(response => {
                     console.log('API Response:', response.data); // 디버깅용 API 응답 출력
                     const fetchedBoard = {
@@ -47,7 +47,7 @@ const BoardDetail = () => {
   const handleDelete = (freeBoardNo) => {
 
     if(window.confirm('삭제하시겠습니까?')){
-        axios.delete(`http://localhost:8080/api/free/delete/${freeBoardNo}`)
+        axios.delete(`/api/free/delete/${freeBoardNo}`)
         .then(response => {
             if(response.status===204){
                 window.alert('삭제되었습니다.');

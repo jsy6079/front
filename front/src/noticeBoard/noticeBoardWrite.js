@@ -24,7 +24,7 @@ function FreeBoardWrite() {
     };
 
     if(formData.noticeBoardType !== 'none') {
-    axios.post('http://localhost:8080/api/notice/post',formData)
+    axios.post('/api/notice/post',formData)
     .then(response => {
         window.alert('글이 등록되었습니다.');
         navigate('/');
