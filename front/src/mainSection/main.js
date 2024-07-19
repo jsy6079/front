@@ -14,7 +14,7 @@ function Main() {
   
   useEffect(() => {
 
-    axios.get('/api/event')
+    axios.get('http://13.211.200.67:8080/api/event')
     .then(response => {
       if (response.data && Array.isArray(response.data)) {
         setEvents({ list: response.data });
@@ -25,7 +25,7 @@ function Main() {
     .catch(error => console.log('Error fetching data:', error));
   
   
-    axios.get('/api/notice')
+    axios.get('http://13.211.200.67:8080/api/notice')
     .then(response => {
       if (response.data && Array.isArray(response.data)) {
         const top5Notices = response.data.slice(0,5);
@@ -37,7 +37,7 @@ function Main() {
     .catch(error => console.log('Error fetching data:', error));
   
   
-    axios.get('/api/calender')
+    axios.get('http://13.211.200.67:8080/api/calender')
     .then(response => {
       if (response.data && Array.isArray(response.data)) {
         const today = new Date();
@@ -52,7 +52,7 @@ function Main() {
     })
     .catch(error => console.log('Error fetching data:', error));
 
-    axios.get('/api/notice/noticeBoardListResent')
+    axios.get('http://13.211.200.67:8080/api/notice/noticeBoardListResent')
     .then(response => {
       if (response.data && Array.isArray(response.data)) {
         setNoticeLists({ list: response.data });

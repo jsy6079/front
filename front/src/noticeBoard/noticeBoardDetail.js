@@ -47,7 +47,7 @@ const BoardDetail = () => {
   const handleDelete = (freeBoardNo) => {
 
     if(window.confirm('삭제하시겠습니까?')){
-        axios.delete(`/api/free/delete/${freeBoardNo}`)
+        axios.delete(`http://13.211.200.67:8080/api/free/delete/${freeBoardNo}`)
         .then(response => {
             if(response.status===204){
                 window.alert('삭제되었습니다.');
